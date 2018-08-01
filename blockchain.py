@@ -8,11 +8,12 @@ class Blockchain(object):
         self.current_transactions = []
 
         #Create a genisis block
-        self.new_block(#ADD PARAMS)
+        self.new_block(previous_hash=1, proof=100)
 
     def new_block(self, proof, previous_hash=None):
         """
         Create a new block in the Blockchain
+        
         :param proof: <int> The proof given by the Proof of Work algorithm
         :param previous_hash: (optional) <str> Hash of previous block
         :return: <dict> new Block
@@ -35,6 +36,7 @@ class Blockchain(object):
     def new_transaction(self, sender, recipient, amount):
         """
         Creates a new transaction to go into the next mined block
+        
         :param sender: <str> Address of the sender
         :param recipient: <str> Address of the receipient
         :param amount: <int> Amount
@@ -49,12 +51,12 @@ class Blockchain(object):
 
     @staticmethod
     def hash(block):
-        #will hash a block
-        pass
-
+        """
+        creates a sha-256 hash of a block 
+         :param
+        """
     @property
     def last_block(self):
-        #return last block in chain
-        pass        
+        return self.chain[-1]      
 
     pass
